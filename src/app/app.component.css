@@ -1,0 +1,59 @@
+body {
+    cursor: none;
+}
+
+.cursor {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 3px solid rgb(131, 123, 123);
+    position: absolute;
+    cursor: pointer;
+    transition: 150ms;
+    transition-timing-function: ease-out;
+    animation: cursorAnim .5s infinite alternate;
+    pointer-events: none;
+}
+
+.cursor::after {
+    content: "";
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    border: 5px solid gray;
+    border-radius: 50%;
+    opacity: .5;
+    top: 2;
+    left: 2;
+    animation: cursorAnim2 .5s infinite alternate; ;
+}
+
+@keyframes cursorAnim {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(.7);
+    }
+}
+
+@keyframes cursorAnim2 {
+    from {
+        transform: scale(3);
+    }
+    to {
+        transform: scale(.7);
+    }
+}
+
+.cursor::before {
+    position: absolute;
+    content: '';
+    background-color:rgb(131, 123, 123);
+    /* height: 10px;
+    width: 10px; */
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

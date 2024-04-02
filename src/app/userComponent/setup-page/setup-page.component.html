@@ -1,0 +1,83 @@
+<app-header></app-header>
+ <div class="grid grid-cols-10">
+    <div class="col-span-6">
+        <mat-stepper orientation="vertical"  #stepper color="accent">
+            <mat-step [stepControl]="firstFormGroup">
+              <form [formGroup]="firstFormGroup">
+                <ng-template matStepLabel>Profile Setup</ng-template>
+                <div class="flex gap-1">
+                  
+                 </div>
+               <div class="flex gap-1">
+                  <mat-form-field>
+                    <mat-label>Sport</mat-label>
+                    <mat-select formControlName="sports">
+                      <mat-option>-- Select an option --</mat-option>
+                      <mat-option value="sports">Basketball</mat-option>
+                      <mat-option value="movies">Football</mat-option>
+                      <mat-option value="music">Tennis</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field>
+                    <mat-label>Movies</mat-label>
+                    <mat-select formControlName="movies">
+                      <mat-option>-- Select an option --</mat-option>
+                      <mat-option value="sports">Action</mat-option>
+                      <mat-option value="movies">Romance</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+               </div>
+               <div class="flex gap-1">
+                <mat-form-field>
+                  <mat-label>Music</mat-label>
+                  <mat-select formControlName="music">
+                    <mat-option>-- Select an option --</mat-option>
+                    <mat-option value="reading">Classic</mat-option>
+                    <mat-option value="cooking">Pop Music</mat-option>
+                    <mat-option value="painting">Electronic</mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <mat-form-field>
+                  <mat-label>Hobbies</mat-label>
+                  <mat-select formControlName="hobbies">
+                    <mat-option>-- Select an option --</mat-option>
+                    <mat-option value="reading">Reading</mat-option>
+                    <mat-option value="cooking">Cooking</mat-option>
+                    <mat-option value="painting">Painting</mat-option>
+                  </mat-select>
+                </mat-form-field>         
+            </div>
+                <div>
+                  <button mat-button matStepperNext>Next</button>
+                </div>
+              </form>
+
+            </mat-step>
+            <mat-step [stepControl]="secondFormGroup">
+              <form [formGroup]="secondFormGroup">
+                <ng-template matStepLabel>About Yourself</ng-template>
+                <mat-form-field class="example-full-width">
+                  <mat-label>Leave a comment</mat-label>
+                  <textarea formControlName="about" matInput placeholder="Ex. It makes me feel..."></textarea>
+                </mat-form-field>
+                <div>
+                  <button mat-button matStepperPrevious>Back</button>
+                  <button mat-button matStepperNext>Next</button>
+                </div>
+              </form>
+            </mat-step>
+            <mat-step>
+              <ng-template matStepLabel>Done</ng-template>
+              <p>You are now done.</p>
+              <div>
+                <button mat-button (click)="onSubmit()">Home</button>
+              </div>
+            </mat-step>
+          </mat-stepper>
+    </div>
+    <div class="col-span-4 hidden lg:block">
+        <img class="rounded-l-full" [src]="url" alt="">
+    </div>
+  </div>
+  
+  

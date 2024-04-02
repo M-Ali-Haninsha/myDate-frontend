@@ -1,0 +1,33 @@
+
+:host ::ng-deep .mat-accent.mat-vertical-stepper-header {
+    width: 250px;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid #bdbdbd;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+:host ::ng-deep .mat-stepper-vertical-line::before {
+    border-left-style: dotted !important;
+    border-left-width: 4px !important;
+    top: -10px;
+}
+
+
+:host ::ng-deep .mat-accent.mat-step-header.mat-vertical-stepper-header[ng-reflect-selected='true'].mat-step-header {
+    background-color: rgba(255, 71, 134, 0.25);
+    border: 1px solid #ff4786 !important;
+    backdrop-filter: blur(5px) !important;
+}
+
+:host ::ng-deep .mat-accent.mat-step-header.mat-vertical-stepper-header:has(.mat-step-icon-state-edit) {
+    background-color: rgba(0, 128, 0, 0.267);
+    border: 1px solid green !important;
+    backdrop-filter: blur(5px);
+}
+
+/* inside box tex */
+:host ::ng-deep .mat-accent.mat-step-header.mat-vertical-stepper-header .mat-step-label-selected {
+    color: #ff4786 !important;
+}
